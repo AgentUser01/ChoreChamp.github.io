@@ -7,8 +7,8 @@
 
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f7f7f7;
     color: #333;
 }
 
@@ -24,13 +24,53 @@ header {
     padding: 20px 0;
 }
 
+/* Styles for the dropdown menu */
+/* Enhanced dropdown styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Fade in effect */
+    visibility: visible; /* Show dropdown */
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500; /* Adjust based on your design */
+}
+
+
+.dropdown-content a:hover {
+    background-color: #f6f6f6;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #e1e1e1;
+    margin: 8px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-content {
+        width: 100%; /* Adjust dropdown width for smaller screens */
+    }
+}
+
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Spreads items across the header */
 }
 
 nav h1 {
@@ -40,19 +80,37 @@ nav h1 {
 
 nav ul {
     display: flex;
-    list-style-type: none;
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-left: 20px; /* Spacing between menu items */
 }
 
+
+/* Style for language, help, login links */
 nav ul li a {
-    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Adequate padding */
+    margin-right: 10px; /* Spacing between menu items */
     color: #fff;
-    font-weight: bold;
+    text-decoration: none;
 }
 
+/* Special styling for the Sign Up button */
+.sign-up-button {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: 1px solid #000; /* Optional: adds a border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px;
+}
+
+/* Ensures rounded corners for all elements */
+*, *:before, *:after {
+    border-radius: 5px; /* Apply rounded corners globally */
+}
 /* Hero section styles */
 .hero {
     text-align: center;
