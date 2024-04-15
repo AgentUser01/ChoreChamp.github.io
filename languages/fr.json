@@ -1,0 +1,26 @@
+{
+    "nav": {
+      "openBid": "Ouvrir une Offre",
+      "bidOnJob": "Faire une Offre sur un Emploi",
+      "about": "À Propos",
+      "help": "Aide",
+      "login": "Connexion",
+      "signup": "S'inscrire"
+    },
+    "heroSection": {
+      "headline": "Faites le travail avec ChoreChamp",
+      "subHeadline": "Réservez, Détendez-vous, Réalisez – ChoreChamp rend le soin à domicile possible."
+    },
+    "features": {
+      "convenience": "Commodité",
+      "convenienceDesc": "Trouvez des prestataires de services fiables pour toutes vos tâches ménagères en quelques clics.",
+      "qualityWork": "Travail de Qualité",
+      "qualityWorkDesc": "Nos professionnels vérifiés livrent des résultats de premier ordre, garantissant votre satisfaction à chaque fois.",
+      "affordability": "Accessibilité",
+      "affordabilityDesc": "Recevez des offres compétitives de la part de contractants qualifiés et choisissez la meilleure offre qui convient à votre budget."
+    },
+    "footer": {
+      "copyright": "© 2024 ChoreChamps. Tous droits réservés."
+    }
+  }
+  

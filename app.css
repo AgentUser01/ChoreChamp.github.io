@@ -1,212 +1,550 @@
-/* Reset default margin and padding */
+/* Global Styles */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Body styles */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f7f7f7;
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.overlay form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+body, html {
+    background-color: #fff; /* Ensures the entire page has a white background */
     color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 body.index {
     background-color: #000;
-    color: #fff
+    color: #fff;
 }
 
-/* Header styles */
-header {
+/* Header Styles */
+header, header .button {
     background-color: #000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0px 0px;
+    height: 40px;
+    transition: background-color 0.3s ease;
 }
 
-/* Styles for the dropdown menu */
-/* Enhanced dropdown styling */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    z-index: 1;
-}
-
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1; /* Fade in effect */
-    visibility: visible; /* Show dropdown */
-}
-
-.dropdown-content a {
-    color: #333;
-    padding: 15px 20px;
+header h1 a {
+    color: #fff;
+    font-size: 35px;
     text-decoration: none;
-    display: block;
-    font-weight: 500; /* Adjust based on your design */
 }
 
-
-.dropdown-content a:hover {
-    background-color: #f6f6f6;
-}
-
-.dropdown-divider {
-    height: 1px;
-    background-color: #e1e1e1;
-    margin: 8px 0;
-}
-
-@media screen and (max-width: 768px) {
-    .dropdown-content {
-        width: 100%; /* Adjust dropdown width for smaller screens */
-    }
-}
-
+/* Navigation Styles */
 nav {
+    align-items: center;
+    position: fixed;
     display: flex;
-    align-items: center; /* Aligns items vertically */
-    justify-content: space-between; /* Spreads items across the header */
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #000;
+    width: 100%;
+    z-index: 1000;
+    height: 80px;
 }
 
-nav h1 {
-    font-size: 24px;
-    font-weight: bold;
+nav h1, nav ul li a {
+    color: #fff;
 }
 
 nav ul {
     display: flex;
-    list-style-type: none; /* Removes bullet points */
-    padding: 0; /* Removes default padding */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin-left: 20px; /* Spacing between menu items */
+    margin-left: 20px;
 }
 
-
-/* Style for language, help, login links */
 nav ul li a {
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 15px; /* Adequate padding */
-    margin-right: 10px; /* Spacing between menu items */
-    color: #fff;
+    border-radius: 50px;
+    padding: 10px;
     text-decoration: none;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Special styling for the Sign Up button */
-.sign-up-button {
-    background-color: #fff; /* White background */
-    color: #000; /* Black text */
-    border: 1px solid #000; /* Optional: adds a border */
-    border-radius: 5px; /* Rounded corners */
+nav ul li a:hover {
+    background-color: #f1f1f183;
+}
+
+#secondaryNav.hidden {
+    display: none;
+}
+#secondaryNav.active {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000; /* Adjust as per your design */
+    z-index: 1001; /* Make sure it's above other content */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.button-animate {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-animate:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.sign-up-button, .sign-up-button:hover {
+    background-color: #fff;
+    border-radius: 12px;
+    color: #000;
     padding: 10px 15px;
 }
 
-/* Ensures rounded corners for all elements */
-*, *:before, *:after {
-    border-radius: 5px; /* Apply rounded corners globally */
+/* Dropdown Menu Styles */
+.dropdown, .chores-dropdown {
+    display: inline-block;
+    position: relative;
 }
-/* Hero section styles */
+
+.dropdown .dropdown-content, .chores-dropdown-content, .chores-dropdown:hover .chores-dropdown-content {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    display: none;
+    font-size: 15px;
+    position: absolute;
+}
+
+.dropdown-content a, .chores-dropdown-content a {
+    color: black;
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover, .chores-dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.chores-dropbtn {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+}
+
+.chores-dropbtn:hover {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+}
+
+.selected {
+    background-color: #f1f1f183; /* Highlight color for selected dropdown */
+}
+
+/* Hero Section Styles */
 .hero {
-    text-align: center;
-    padding: 100px 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 150px 100px;
+}
+
+.hero-content, .hero p, .chores-dropdown {
+    font-size: 20px;
+    margin-bottom: 35px;   
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
+    font-size: 45px;
     margin-bottom: 40px;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
-.hero button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 15px 30px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.hero-image {
+    border-radius: 100px;
+    flex-basis: 20%;
+    width: auto;
+    height: auto;
+    max-width: 45%;
 }
 
-.hero button:hover {
-    background-color: #0056b3;
-}
-
-/* Features section styles */
-.features {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
+/* Employee Section Styles */
+.employee {
+    align-items: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 100px 100px;
+    background-color: #fff;
+    gap: 40px;
 }
 
-.feature {
-    text-align: center;
+.employee-image {
+    border-radius: 100px;
+    flex-basis: 20%;
+    width: auto;
+    height: auto;
+    max-width: 45%;
 }
 
-.feature img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
+.employee h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    color: #000;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 
-.feature h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.employee p{
+    font-size: 20px;
+    margin-bottom: 35px;
+    color:#000;
+    margin-right: 40px;
 }
 
-.feature p {
+.employee-actions {
+    display: flex;
+    justify-content: start; /* Adjust as needed, e.g., space-between, space-around */
+    gap: 20px; /* Adjust the gap between buttons as needed */
+}
+
+.employee-existingmbr {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
     font-size: 16px;
+    padding: 16px;
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    overflow: hidden; /* Ensures the pseudo-element doesn't extend beyond the button's boundaries */
 }
 
-/* Footer styles */
+.employee-existingmbr::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%; /* Start with no width */
+    height: 2px; /* Same height as your desired border */
+    background-color: #000; /* Border color */
+    transition: width 0.4s ease; /* Animate width change */
+}
+
+.employee-existingmbr:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+.employee-strt {
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+}
+
+.employee-strt:hover {
+    background-color: rgba(59, 59, 59, 0.507);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Business Section Styling */
+
+.business {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 100px;
+    background-color: #f1f1f1;
+    gap: 40px;
+}
+
+main h1 {
+    color: #000;
+    background-color: #f1f1f1;
+    font-size: 35px;
+    padding: 10px 20px;
+    
+}
+.business h1 {
+    color: #000;
+
+}
+
+.business-image {
+    border-radius: 100px;
+    flex-basis: 20%;
+    width: auto;
+    height: auto;
+    max-width: 45%;
+}
+
+.business h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    color: #000;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.business p{
+    font-size: 20px;
+    margin-bottom: 35px;
+    color:#000;
+    margin-right: 40px;
+}
+
+.business-actions {
+    display: flex;
+    justify-content: start; /* Adjust as needed, e.g., space-between, space-around */
+    gap: 20px; /* Adjust the gap between buttons as needed */
+}
+
+.business-existingmbr {
+    background-color: #f1f1f1;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    overflow: hidden; /* Ensures the pseudo-element doesn't extend beyond the button's boundaries */
+}
+
+.business-existingmbr::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%; /* Start with no width */
+    height: 2px; /* Same height as your desired border */
+    background-color: #000; /* Border color */
+    transition: width 0.4s ease; /* Animate width change */
+}
+
+.business-existingmbr:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+.business-strt {
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+}
+
+.business-strt:hover {
+    background-color: rgba(59, 59, 59, 0.507);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Manager Section Styling */
+
+.manager {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 100px;
+    background-color: #f1f1f1;
+    gap: 40px;
+}
+
+.manager-image {
+    border-radius: 100px;
+    flex-basis: 20%;
+    width: auto;
+    height: auto;
+    max-width: 45%;
+}
+
+.manager h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    color: #000;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.manager p{
+    font-size: 20px;
+    margin-bottom: 35px;
+    color:#000;
+    margin-right: 40px;
+}
+
+.manager-actions {
+    display: flex;
+    justify-content: start; /* Adjust as needed, e.g., space-between, space-around */
+    gap: 20px; /* Adjust the gap between buttons as needed */
+}
+
+.manager-existingmbr {
+    background-color: #f1f1f1;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    overflow: hidden; /* Ensures the pseudo-element doesn't extend beyond the button's boundaries */
+}
+
+.manager-existingmbr::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%; /* Start with no width */
+    height: 2px; /* Same height as your desired border */
+    background-color: #000; /* Border color */
+    transition: width 0.4s ease; /* Animate width change */
+}
+
+.manager-existingmbr:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+.manager-strt {
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+}
+
+.manager-strt:hover {
+    background-color: rgba(59, 59, 59, 0.507);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
-    text-align: center;
     padding: 20px 0;
+    text-align: center;
 }
 
-/* Responsive styles */
+/* Media Queries */
 @media screen and (max-width: 768px) {
-    nav {
+    .features, nav {
+        align-items: center;
         flex-direction: column;
+    }
+
+    .hero, .hero img {
+        flex-direction: column;
+    }
+
+    .hero img {
+        margin: 20px 0;
+        max-width: 50%;
+    }
+
+    .hero-text, nav ul li .employee{
+        margin: 0;
     }
 
     nav ul {
-        margin-top: 20px;
-    }
-
-    nav ul li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .hero {
-        padding: 80px 20px;
-    }
-
-    .hero h2 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .features {
         flex-direction: column;
-        align-items: center;
     }
 }

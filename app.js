@@ -1,19 +1,46 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Get all navigation links
-    const navLinks = document.querySelectorAll("nav ul li a");
+    // Toggle display of forms
+    function toggleForm(formId) {
+        const form = document.getElementById(formId);
+        form.style.display = (form.style.display === 'none' || !form.style.display) ? 'flex' : 'none';
+    }
 
-    // Loop through each navigation link
-    navLinks.forEach(function(link) {
-        // Add click event listener to each link
-        link.addEventListener("click", function(event) {
-            // Prevent default link behavior
-            event.preventDefault();
 
-            // Get the href attribute of the clicked link
-            const href = this.getAttribute("href");
+    // Submit Sign Up form
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('signupUsername').value;
+        const email = document.getElementById('signupEmail').value;
+        const password = document.getElementById('signupPassword').value;
 
-            // Navigate to the corresponding page
-            window.location.href = href;
-        });
+        fetch('/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', },
+            body: JSON.stringify({ username, email, password }),
+        })
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error('Error:', error));
     });
+
+    // Submit Log In form
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', },
+            body: JSON.stringify({ email, password }),
+        })
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error('Error:', error));
+    });
+});
+
+// Helper function to smoothly scroll to the top of the page
+document.querySelector('.scrollToTopBtn').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });

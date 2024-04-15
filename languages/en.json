@@ -1,0 +1,26 @@
+{
+    "nav": {
+      "openBid": "Open a Bid",
+      "bidOnJob": "Bid on a Job",
+      "about": "About",
+      "help": "Help",
+      "login": "Login",
+      "signup": "Sign Up"
+    },
+    "heroSection": {
+      "headline": "Get Stuff Done With ChoreChamp",
+      "subHeadline": "Book, Relax, Achieve – ChoreChamp makes home care happen."
+    },
+    "features": {
+      "convenience": "Convenience",
+      "convenienceDesc": "Find reliable service providers for all your household tasks with just a few clicks.",
+      "qualityWork": "Quality Work",
+      "qualityWorkDesc": "Our vetted professionals deliver top-notch results, ensuring your satisfaction every time.",
+      "affordability": "Affordability",
+      "affordabilityDesc": "Get competitive bids from skilled contractors and choose the best offer that fits your budget."
+    },
+    "footer": {
+      "copyright": "© 2024 ChoreChamps. All rights reserved."
+    }
+  }
+  

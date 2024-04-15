@@ -1,0 +1,26 @@
+{
+    "nav": {
+      "openBid": "Abrir una Oferta",
+      "bidOnJob": "Postularse para un Trabajo",
+      "about": "Acerca de",
+      "help": "Ayuda",
+      "login": "Iniciar Sesión",
+      "signup": "Registrarse"
+    },
+    "heroSection": {
+      "headline": "Haz cosas con ChoreChamp",
+      "subHeadline": "Reserva, Relájate, Logra – ChoreChamp hace que el cuidado del hogar suceda."
+    },
+    "features": {
+      "convenience": "Conveniencia",
+      "convenienceDesc": "Encuentra proveedores de servicios confiables para todas tus tareas domésticas con solo unos pocos clics.",
+      "qualityWork": "Trabajo de Calidad",
+      "qualityWorkDesc": "Nuestros profesionales verificados entregan resultados de primera calidad, asegurando tu satisfacción cada vez.",
+      "affordability": "Asequibilidad",
+      "affordabilityDesc": "Obtén ofertas competitivas de contratistas calificados y elige la mejor oferta que se ajuste a tu presupuesto."
+    },
+    "footer": {
+      "copyright": "© 2024 ChoreChamps. Todos los derechos reservados."
+    }
+  }
+  
